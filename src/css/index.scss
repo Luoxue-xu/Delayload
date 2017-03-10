@@ -40,7 +40,29 @@
     background-size: cover;
     border: 4px solid #ccc;
     opacity: 0;
-    &:hover {
+    &:hover, &.light {
         filter: saturate(100%);
+    }
+}
+
+@media screen and (max-width: 480px) {
+
+    .header {
+        position: relative;
+        height: 100vh;
+        background: #333;
+    }
+    .delayload {
+        display: flex;
+        flex-wrap: wrap;
+        padding: .06rem;
+    }
+    .delayload-item {
+        flex: 48% 0 0;
+        margin: 1%;
+        height: 1.2rem;
+        &:active {
+            filter: saturate(100%);
+        }
     }
 }

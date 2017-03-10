@@ -4,7 +4,10 @@ let delayload = new Delayload({
     contain: '.delayload', // 容器
     dataName: 'data-src', // 用来储存图片的属性名data-[name]
     showHeight: 0,
-    showType: 'background' // 显示方式
+    showType: 'background', // 显示方式
+    endLoad: (data) => {
+
+    }
 });
 
 
