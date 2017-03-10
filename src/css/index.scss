@@ -58,9 +58,10 @@
         padding: .06rem;
     }
     .delayload-item {
-        flex: 48% 0 0;
-        margin: 1%;
+        flex: 49% 0 0;
+        margin: .5%;
         height: 1.2rem;
+        border: 1px solid #ccc;
         &:active {
             filter: saturate(100%);
         }
