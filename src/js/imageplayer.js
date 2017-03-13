@@ -41,6 +41,9 @@ export default class ImagePlayer {
         this.scroller.innerHTML = '';
         this.scroller.appendChild(this.list);
         this.show(this.list, url);
+        this.list.addEventListener('click', (e) => {
+            e.stopPropagation(); // 阻止冒泡
+        }, false);
     }
 
     // 需要显示大图的元素
@@ -58,17 +61,17 @@ export default class ImagePlayer {
         let winScale = winStyle.w / winStyle.h;
         let _scale = _style.w / _style.h;
         if(winScale > _scale) {
+            // 视图的宽高比大于元素的宽高比，则以视图的高度为基准
             _style.h = winStyle.h * .95;
             _style.w = _style.h * _scale;
         }else {
+            // 视图的宽高比小于元素的宽高比，则以视图的宽度为基准
             _style.w = winStyle.w * .95;
             _style.h = _style.w / _scale;
         }
 
         this.list.querySelector('img').style.width = `${_style.w}px`;
         this.list.querySelector('img').style.height = `${_style.h}px`;
-
-        console.log(_style.w, _style.h);
     }
 
     // 打开弹窗
@@ -90,7 +93,7 @@ export default class ImagePlayer {
             }, false);
         });
 
-        this.box.addEventListener('click', () => {
+        this.box.addEventListener('click', (e) => {
             this.close();
         }, false);
     }
