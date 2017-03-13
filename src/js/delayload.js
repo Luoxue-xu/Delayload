@@ -40,16 +40,16 @@ export default class Delayload {
                 let _this = this.items.item(index);
                 if(item - this.showHeight <= _scrollTop + window.innerHeight) {
                     if(this.showType === 'background') {
-                        _this.parentNode.style.backgroundImage = `url(${_this.getAttribute(this.dataName)})`;
+                        _this.style.backgroundImage = `url(${_this.getAttribute(this.dataName)})`;
                     }else {
-                        _this.setAttribute('src', _this.getAttribute(this.dataName));
+                        _this.innerHTML = `<img src="${_this.getAttribute(this.dataName)}" alt="" title="">`
                     }
                     this.loadImg(_this.getAttribute(this.dataName), (img) => {
                         if(this.len - 1 === index) {
                             this.isEndLoad = true;
                             this.endLoad(this.items);
                         }
-                        _this.parentNode.style.opacity = 1;
+                        _this.style.opacity = 1;
                     });
                     this.eachLoad(item);
                 }

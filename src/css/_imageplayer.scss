@@ -1,0 +1,21 @@
+.imageplayer {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 999;
+    background: rgba(255, 100, 0, .3);
+}
+.imageplayer-scroller {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 4px solid #ccc;
+}
+.imageplayer-item {
+    opacity: 0;
+    transition: all .3s ease-out;
+}

@@ -1,4 +1,5 @@
 import Delayload from './delayload';
+import ImagePlayer from './imageplayer';
 
 let delayload = new Delayload({
     contain: '.delayload', // 容器
@@ -8,6 +9,10 @@ let delayload = new Delayload({
     endLoad: (data) => {
 
     }
+});
+
+let imageplayer = new ImagePlayer({
+    item: '.delayload-item'
 });
 
 
