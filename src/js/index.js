@@ -16,8 +16,8 @@ let imageplayer = new ImagePlayer({
 });
 
 
-// 复制到百度图片下面的console，自动会生成能下载的图片字符串.
-// let imgs = document.querySelectorAll('[data-objurl]');
+// 复制到Lofter下面的console，自动会生成能下载的图片字符串.
+// let imgs = document.querySelectorAll('img');
 // let len = imgs.length;
 // let code = '';
 //
@@ -25,11 +25,11 @@ let imageplayer = new ImagePlayer({
 //     let img = new Image();
 //     img.onload = () => {
 //         if(img.height >= 480) {
-//             code += `<div class="delayload-item"><img src="" data-src="${item.dataset.objurl}" alt="" title=""></div>`;
+//             code += `<div class="delayload-item" data-src='${img.src}'></div>`;
 //         }
 //         if(index === len - 1) {
 //             console.log(code);
 //         }
 //     }
-//     img.src = item.dataset.objurl;
+//     img.src = item.src;
 // });
