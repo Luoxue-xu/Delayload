@@ -1,5 +1,21 @@
+import data from './data';
 import Delayload from './delayload';
 import ImagePlayer from './imageplayer';
+
+let code = '';
+let contain = document.querySelector('.delayload');
+data.map((item) => {
+    code += `<div class="delayload-item" data-src='${item}'></div>`;
+});
+contain.innerHTML = code;
+
+let items = contain.querySelectorAll('.delayload-item');
+Array.from(items).map((item) => {
+    item.addEventListener('click', function() {
+        console.log(this.dataset.src);
+    });
+});
+
 
 let delayload = new Delayload({
     contain: '.delayload', // 容器
@@ -25,7 +41,7 @@ let imageplayer = new ImagePlayer({
 //     let img = new Image();
 //     img.onload = () => {
 //         if(img.height >= 480) {
-//             code += `<div class="delayload-item" data-src='${img.src}'></div>`;
+//             code += `"${img.src}",`;
 //         }
 //         if(index === len - 1) {
 //             console.log(code);
